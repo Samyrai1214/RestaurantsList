@@ -5,7 +5,6 @@ const port = 3000
 const restaurants = require('./public/jsons/restaurants.json').results
 
 app.use(express.static('public'))
-
 app.engine('.hbs', engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
 app.set('views', './views');
@@ -20,7 +19,8 @@ app.get('/restaurants', (req, res) => {
 
 app.get('/restaurants/:id', (req, res) => {
   const id = req.params.id
-  res.send(`restaurants id: ${id}`)
+  const restaurant = restaurants.find(item => item.id.toString() === id)
+  res.render('detail', {restaurant})
 })
 
 app.listen(port, () => {
