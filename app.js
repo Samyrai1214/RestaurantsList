@@ -19,11 +19,19 @@ app.get('/restaurants', (req, res) => {
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase().trim()
+
   const matchedRestaurants = restaurants.filter(item => 
     item.name.toLowerCase().includes(keyword) || 
     item.category.toLowerCase().includes(keyword)
   )
-  res.render('index', { restaurants: matchedRestaurants, keyword })
+
+  if (!matchedRestaurants.length) {
+    res.render('no-result', {keyword})
+  } else if (!keyword) {
+    res.render('no-keyword')
+  } else {
+    res.render('index', { restaurants: matchedRestaurants, keyword })
+  }
 })
 
 app.get('/restaurants/:id', (req, res) => {

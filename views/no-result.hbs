@@ -35,28 +35,12 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-md-10 col-12 mx-auto">
-      <div class="row row-cols-sm-3">
-        {{#each restaurants as | restaurant |}}
-        <a href="/restaurants/{{restaurant.id}}" class="text-secondary">
-          <div class="card mb-3">
-            <img class="card-img-top" src="{{restaurant.image}}"
-              alt="{{restaurant.name}}">
-            <div class="card-body p-3">
-              <h6 class="card-title mb-1">{{restaurant.name}}</h6>
-
-              <div class="restaurant-category mb-1">
-                <i class="fas fa-utensils pr-2"></i> {{restaurant.category}}
-              </div>
-
-              <span class="badge rounded-pill bg-danger font-weight-normal">
-                {{restaurant.rating}}
-                <i class="fas fa-star fa-xs"></i>
-              </span>
-            </div>
-          </div>
-        </a>
-        {{/each}}
-      </div>
+      {{!-- <div class="row row-cols-sm-3"> --}}
+        <h3>沒有搜尋結果</h3>
+        <p>很抱歉，找不到任何包含「{{keyword}}」的餐廳名稱或分類</p>
+        
+      {{!-- </div> --}}
+      <img src="https://s2.loli.net/2024/04/12/46GoJZymrSptUMc.png" alt="" class="no-result">
     </div>
   </div>
 </div>
