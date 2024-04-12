@@ -19,7 +19,8 @@ app.get('/restaurants', (req, res) => {
 
 app.get('/search', (req, res) => {
   const keyword = req.query.keyword.toLowerCase().trim()
-  console.log(keyword)
+
+  // 在餐廳名稱或分類中搜尋符合的關鍵字
   const matchedRestaurants = restaurants.filter(item => 
     item.name.toLowerCase().includes(keyword) || 
     item.category.toLowerCase().includes(keyword)
