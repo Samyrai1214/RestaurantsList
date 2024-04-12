@@ -22,13 +22,25 @@
 以下流程皆在Terminal進行操作
 
 1. 複製專案至本機：
-$ git clone https://github.com/Samyrai1214/RestaurantsList.git
+```
+git clone https://github.com/Samyrai1214/RestaurantsList.git
+```
 2. 初始化
-$ cd RestaurantsList          // 進入專案資料夾
-$ npm install                       // 安裝套件
+```
+cd RestaurantsList          // 進入專案資料夾
+```
+```
+npm install                 // 安裝套件
+```
 3. 執行專案程式：
-$ npm run dev
-4. Terminal出現 “express server is running on http://localhost:3000”，表示已經成功執行，開啟任一網頁瀏覽器輸入 [http://localhost:3000](http://localhost:3000) 即可開始使用
+```
+npm run dev
+```
+4. Terminal出現以下訊息表示已成功執行，開啟任一網頁瀏覽器輸入 [http://localhost:3000](http://localhost:3000) 即可開始使用：
+```
+express server is running on http://localhost:3000
+```
+
 
 ## Contributor
 
