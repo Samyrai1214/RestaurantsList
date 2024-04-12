@@ -26,6 +26,7 @@ app.get('/search', (req, res) => {
     item.category.toLowerCase().includes(keyword)
   )
 
+  // 分別導向沒有結果、未輸入關鍵字或搜尋結果頁面
   if (!matchedRestaurants.length) {
     res.render('no-result', {keyword})
   } else if (!keyword) {
